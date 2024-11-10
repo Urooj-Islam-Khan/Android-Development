@@ -70,7 +70,113 @@ Sample XML for a Button in Android:
     android:id="@+id/buttonSubmit"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="Submit" /> ```
+    android:text="Submit" />
+```
 
-  
+---
+## 8. Layouts in Android Studio (XML)
 
+In Android, **layouts** are the structure that defines the user interface (UI) for an app. These layouts are written in XML and determine the positioning and appearance of UI components.
+
+### Common Layout Types:
+- **LinearLayout**: Arranges elements either horizontally or vertically.
+- **RelativeLayout**: Positions elements relative to each other or to the parent container.
+- **ConstraintLayout**: A more flexible layout that allows complex designs.
+- **FrameLayout**: Designed to block out an area on the screen for a single item.
+
+### Example: LinearLayout
+```xml
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello, Android!" />
+</LinearLayout>
+
+ ```
+---
+
+## 9. Views in Android: Text, Button, Image & EditText Views
+
+Views are the basic building blocks of an Android app's UI. They represent components like text, buttons, images, and input fields.
+
+Common Views:
+- **TextView:** Displays text to the user.
+- **Button:** A clickable button.
+- **ImageView:** Displays an image.
+- **EditText:** Allows users to input text.
+
+### Example: Button and EditText
+```xml
+<EditText
+    android:id="@+id/editTextName"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="Enter your name" />
+
+<Button
+    android:id="@+id/buttonSubmit"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Submit" /> 
+```
+
+---
+
+## 10. Drag and Drop in Android
+
+The Drag and Drop feature allows users to move data or view elements within the app. This functionality is useful in apps where users need to rearrange items, such as in a photo gallery or list.
+
+---
+
+## 11. Android Intent Passing
+
+Intents are used to start activities, services, or deliver broadcasts. They can also be used to pass data between activities.
+
+Types of Intent:
+- **Explicit Intent:** Directly specifies the activity to start. (Used to go to other activity of the same app)
+- **Implicit Intent:**  Does not specify the target component but instead declares a general action to perform. (Used to go to other app)
+
+### Example:  Passing Data with Intent
+```xml
+// Sending Activity
+Intent intent = new Intent(this, SecondActivity.class);
+intent.putExtra("username", "Urooj");
+startActivity(intent);
+
+// Receiving Activity
+String username = getIntent().getStringExtra("username");
+textView.setText("Welcome, " + username);
+
+```
+## Implicit Intent:
+
+Used to perform an action without specifying the component. The system decides the best component to handle the intent.
+
+### Example:
+```xml
+// Example: Open a web page
+Intent intent = new Intent(Intent.ACTION_VIEW);
+intent.setData(Uri.parse("https://www.google.com"));
+startActivity(intent);
+```
+
+## Explicit Intent:
+
+Used to launch a specific activity within your app.
+
+### Example:  
+```xml
+// Example: Navigate to another activity
+Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+startActivity(intent);
+
+
+```
+---
