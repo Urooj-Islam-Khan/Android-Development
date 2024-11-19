@@ -180,3 +180,106 @@ startActivity(intent);
 
 ```
 ---
+
+## 12. Android Bundle Passing
+
+In Android, **Bundle Passing** is used to send multiple key-value pairs between activities or fragments. Bundles are often used with `Intent` to transfer data.
+
+### How Bundle Passing Works:
+1. Create a `Bundle` object.
+2. Put data into the bundle using key-value pairs.
+3. Attach the bundle to an `Intent`.
+4. Retrieve the data in the target activity.
+
+### Example: Passing Data Between Activities
+
+#### Sending Activity
+```java
+Intent intent = new Intent(this, SecondActivity.class);
+Bundle bundle = new Bundle();
+bundle.putString("username", "Urooj");
+bundle.putInt("age", 22);
+intent.putExtras(bundle);
+startActivity(intent);
+```
+---
+
+### Receiving Activity
+
+```
+Bundle bundle = getIntent().getExtras();
+
+if (bundle != null) {
+    String username = bundle.getString("username");
+    int age = bundle.getInt("age");
+    textView.setText("Welcome, " + username + "! Age: " + age);
+}
+```
+
+---
+
+## 13. Splash Screen
+A Splash Screen is the first screen that appears when an app is launched. It is often used for branding, initializing resources, or giving a professional look to the app.
+
+### Steps to Create a Splash Screen:
+Design the splash screen layout in XML.
+Create an activity for the splash screen.
+Use a Handler or Timer to delay navigation to the main activity.
+### Example: Splash Screen Implementation
+
+-XML Layout (splash_screen.xml)
+
+```
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primaryColor">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:src="@drawable/app_logo" />
+
+</RelativeLayout>
+```
+
+- SplashScreenActivity.java
+
+```
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Handler;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class SplashScreenActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.splash_screen);
+
+        // Delay for 3 seconds
+        new Handler().postDelayed(() -> {
+            Intent intent = new Intent(SplashScreenActivity.this, MainActivity.class);
+            startActivity(intent);
+            finish();
+        }, 3000); // 3000 ms = 3 seconds
+    }
+}
+```
+
+### Notes:
+Ensure to define the SplashScreenActivity in the AndroidManifest.xml file and set it as the launcher activity.
+
+- AndroidManifest.xml
+
+```
+<activity android:name=".SplashScreenActivity">
+    <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+    </intent-filter>
+</activity>
+```
