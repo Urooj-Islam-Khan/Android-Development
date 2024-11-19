@@ -283,3 +283,161 @@ Ensure to define the SplashScreenActivity in the AndroidManifest.xml file and se
     </intent-filter>
 </activity>
 ```
+
+## 14. What is ListView?
+
+A **ListView** in Android is a view group that displays a list of items in a vertically scrolling list. It is a common way to display long lists of data in an app.
+
+---
+
+## 15. Types of ListView
+
+### 15.1. Simple ListView
+A **Simple ListView** displays a list of plain text items.
+
+#### Example: Simple ListView
+```java
+// Activity
+import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        ListView listView = findViewById(R.id.listView);
+        String[] items = {"Item 1", "Item 2", "Item 3", "Item 4"};
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(
+            this, android.R.layout.simple_list_item_1, items
+        );
+
+        listView.setAdapter(adapter);
+    }
+}
+```
+
+- XML Layout
+
+```
+<ListView
+    android:id="@+id/listView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" />
+```
+
+### 15.2. Custom ListView
+A Custom ListView allows you to design a list item layout with multiple elements, like images and text.
+
+#### Example: Custom ListView
+- 1. Create a custom item layout (custom_list_item.xml):
+
+```
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/sample_image" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:text="Sample Text" />
+</LinearLayout>
+
+```
+2. Create a custom adapter:
+ ```
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+public class CustomAdapter extends ArrayAdapter<String> {
+
+    private final Context context;
+    private final String[] values;
+
+    public CustomAdapter(Context context, String[] values) {
+        super(context, R.layout.custom_list_item, values);
+        this.context = context;
+        this.values = values;
+    }
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        LayoutInflater inflater = (LayoutInflater) context
+                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View rowView = inflater.inflate(R.layout.custom_list_item, parent, false);
+        
+        TextView textView = rowView.findViewById(R.id.textView);
+        ImageView imageView = rowView.findViewById(R.id.imageView);
+        
+        textView.setText(values[position]);
+        imageView.setImageResource(R.drawable.sample_image);
+
+        return rowView;
+    }
+    }
+
+   ```
+- 3. Use the adapter in your activity:
+     ```
+     String[] items = {"Item 1", "Item 2", "Item 3"};
+     ListView listView = findViewById(R.id.listView);
+     CustomAdapter adapter = new CustomAdapter(this, items);
+     listView.setAdapter(adapter);
+     ```
+
+## 15.3. Expandable ListView
+An Expandable ListView allows displaying a list where each group can expand to show its children.
+
+#### Example: Expandable ListView
+```
+import android.os.Bundle;
+import android.widget.ExpandableListView;
+import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        ExpandableListView expandableListView = findViewById(R.id.expandableListView);
+
+        List<String> groupList = new ArrayList<>();
+        groupList.add("Fruits");
+        groupList.add("Vegetables");
+
+        HashMap<String, List<String>> itemList = new HashMap<>();
+        itemList.put("Fruits", List.of("Apple", "Banana", "Mango"));
+        itemList.put("Vegetables", List.of("Carrot", "Spinach", "Potato"));
+
+        CustomExpandableListAdapter adapter = new CustomExpandableListAdapter(this, groupList, itemList);
+        expandableListView.setAdapter(adapter);
+    }
+}
+```
+
