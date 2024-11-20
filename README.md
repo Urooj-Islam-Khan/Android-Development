@@ -441,3 +441,132 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 
+## 16. Custom CardView  
+
+CardView is a UI component used to display information in a card format with elevation, rounded corners, and shadows.  
+
+### XML Layout for CardView (`custom_card.xml`)  
+```xml
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Title"
+            android:textStyle="bold"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description"
+            android:textSize="14sp" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
+```
+
+## 2. RecyclerView
+RecyclerView is a flexible and efficient UI component for displaying large sets of data.
+
+### Steps to Implement RecyclerView
+- Step 1: Add RecyclerView to XML Layout
+```
+<androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/recyclerView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" />
+```
+
+- Step 2: Create an Adapter for RecyclerView
+```
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.List;
+
+public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder> {
+
+    private final List<String> dataList;
+
+    public CustomAdapter(List<String> dataList) {
+        this.dataList = dataList;
+    }
+
+    @NonNull
+    @Override
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.custom_card, parent, false);
+        return new ViewHolder(view);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        String data = dataList.get(position);
+        holder.title.setText(data);
+        holder.description.setText("Description for " + data);
+    }
+
+    @Override
+    public int getItemCount() {
+        return dataList.size();
+    }
+
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+        TextView title, description;
+
+        public ViewHolder(@NonNull View itemView) {
+            super(itemView);
+            title = itemView.findViewById(R.id.title);
+            description = itemView.findViewById(R.id.description);
+        }
+    }
+}
+```
+
+- Step 3: Set RecyclerView in Activity
+```
+import android.os.Bundle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.Arrays;
+import java.util.List;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        RecyclerView recyclerView = findViewById(R.id.recyclerView);
+        List<String> dataList = Arrays.asList("Item 1", "Item 2", "Item 3");
+
+        CustomAdapter adapter = new CustomAdapter(dataList);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(adapter);
+    }
+}
+
+```
+
