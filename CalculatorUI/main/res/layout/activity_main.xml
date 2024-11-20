@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0C223C"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calculator"
+        android:textColor="#FFFFFF"
+        android:background="#2E4057"
+        android:padding="16dp"
+        android:textSize="45sp"
+        android:gravity="center" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:text="00"
+        android:textAlignment="textEnd"
+        android:gravity="bottom"
+        android:background="#0C223C"
+        android:padding="20dp"
+        android:textColor="#FFFFFF"
+        android:textSize="50sp" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="#153459">
+
+        <TableRow android:layout_gravity="center">
+
+            <TextView
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="@drawable/round_btn"
+                android:gravity="center"
+                android:text="DEL"
+                android:textColor="#FD1E0B"
+                android:textSize="26sp"
+                android:layout_margin="6dp" />
+
+            <TextView
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="@drawable/round_btn"
+                android:gravity="center"
+                android:text="AC"
+                android:textColor="#ADF459"
+                android:textSize="30sp"
+                android:layout_margin="6dp" />
+
+
+
+
+            <TextView
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="@drawable/round_btn"
+                android:gravity="center"
+                android:text="%"
+                android:textColor="#FF6E40"
+                android:textSize="30sp"
+                android:layout_margin="6dp" />
+
+            <TextView
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="@drawable/round_btn"
+                android:gravity="center"
+                android:text="/"
+                android:textColor="#FF6E40"
+                android:textSize="30sp"
+                android:layout_margin="6dp" />
+        </TableRow>
+        <TableRow android:layout_gravity="center">
+
+            <TextView
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="@drawable/round_btn"
+                android:gravity="center"
+                android:text="7"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:layout_margin="6dp" />
+
+            <TextView
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="@drawable/round_btn"
+                android:gravity="center"
+                android:text="8"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:layout_margin="6dp" />
+
+
+
+
+            <TextView
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="@drawable/round_btn"
+                android:gravity="center"
+                android:text="9"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:layout_margin="6dp" />
+
+            <TextView
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="@drawable/round_btn"
+                android:gravity="center"
+                android:text="x"
+                android:textColor="#FF6E40"
+                android:textSize="30sp"
+                android:layout_margin="6dp" />
+        </TableRow>
+
+        <TableRow android:layout_gravity="center">
+
+            <TextView
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="@drawable/round_btn"
+                android:gravity="center"
+                android:text="4"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:layout_margin="6dp" />
+
+            <TextView
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="@drawable/round_btn"
+                android:gravity="center"
+                android:text="5"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:layout_margin="6dp" />
+
+
+
+
+            <TextView
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="@drawable/round_btn"
+                android:gravity="center"
+                android:text="6"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:layout_margin="6dp" />
+
+            <TextView
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="@drawable/round_btn"
+                android:gravity="center"
+                android:text="-"
+                android:textColor="#FF6E40"
+                android:textSize="30sp"
+                android:layout_margin="6dp" />
+        </TableRow>
+
+        <TableRow android:layout_gravity="center">
+
+            <TextView
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="@drawable/round_btn"
+                android:gravity="center"
+                android:text="1"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:layout_margin="6dp" />
+
+            <TextView
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="@drawable/round_btn"
+                android:gravity="center"
+                android:text="2"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:layout_margin="6dp" />
+
+            <TextView
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="@drawable/round_btn"
+                android:gravity="center"
+                android:text="3"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:layout_margin="6dp" />
+
+            <TextView
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="@drawable/round_btn"
+                android:gravity="center"
+                android:text="+"
+                android:textColor="#FF6E40"
+                android:textSize="30sp"
+                android:layout_margin="6dp" />
+        </TableRow>
+
+        <TableRow android:layout_gravity="center">
+
+            <TextView
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="@drawable/round_btn"
+                android:gravity="center"
+                android:text="00"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:layout_margin="6dp" />
+
+            <TextView
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="@drawable/round_btn"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:layout_margin="6dp" />
+
+            <TextView
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="@drawable/round_btn"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="#FF6E40"
+                android:textSize="30sp"
+                android:layout_margin="6dp" />
+
+            <TextView
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="@drawable/round_btn"
+                android:gravity="center"
+                android:text="="
+                android:textColor="#64FFDA"
+                android:textSize="30sp"
+                android:layout_margin="6dp" />
+        </TableRow>
+
+    </TableLayout>
+</LinearLayout>
