@@ -441,6 +441,7 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 
+--- 
 ## 16. Custom CardView  
 
 CardView is a UI component used to display information in a card format with elevation, rounded corners, and shadows.  
@@ -479,7 +480,9 @@ CardView is a UI component used to display information in a card format with ele
 </androidx.cardview.widget.CardView>
 ```
 
-## 2. RecyclerView
+---
+
+## 17. RecyclerView
 RecyclerView is a flexible and efficient UI component for displaying large sets of data.
 
 ### Steps to Implement RecyclerView
