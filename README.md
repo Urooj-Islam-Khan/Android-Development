@@ -573,3 +573,150 @@ public class MainActivity extends AppCompatActivity {
 
 ```
 
+# 18. Fragments in Android  
+
+A **Fragment** is a reusable portion of the user interface in an activity. It allows for modular and flexible UI design by combining multiple fragments in one activity.  
+
+---
+
+## 1. What is a Fragment?  
+
+- A **Fragment** represents a portion of the UI in an activity.  
+- It can be added, replaced, or removed dynamically at runtime.  
+- Fragments are ideal for creating adaptable designs and reusable UI components.  
+
+---
+
+## 2. Lifecycle of a Fragment  
+
+Fragments have their own lifecycle methods that integrate with the activity's lifecycle.  
+The main lifecycle methods are:  
+
+1. **onAttach**: When the fragment is attached to its activity.  
+2. **onCreate**: Initializes the fragment.  
+3. **onCreateView**: Inflates the fragment’s layout.  
+4. **onStart**: Fragment becomes visible.  
+5. **onResume**: Fragment is active and interactable.  
+6. **onPause**: Fragment is partially visible.  
+7. **onDestroyView**: Fragment view is destroyed.  
+8. **onDetach**: Fragment is detached from the activity.  
+
+---
+
+## 3. Creating a Fragment  
+
+### Step 1: Create a Fragment Class  
+```java
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
+public class ExampleFragment extends Fragment {
+
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        // Inflate the fragment layout
+        return inflater.inflate(R.layout.fragment_example, container, false);
+    }
+}
+```
+
+### Step 2: Create a Fragment Layout (fragment_example.xml)
+
+```
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello, Fragment!"
+        android:textSize="18sp" />
+</LinearLayout>
+```
+
+### Step 3: Add the Fragment to an Activity
+
+Using XML
+Add a FrameLayout as a container in your activity layout:
+
+```
+<FrameLayout
+    android:id="@+id/fragmentContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" />
+
+```
+
+Add the Fragment Dynamically in Activity
+
+```
+import android.os.Bundle;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        // Add fragment dynamically
+        getSupportFragmentManager()
+                .beginTransaction()
+                .add(R.id.fragmentContainer, new ExampleFragment())
+                .commit();
+    }
+}
+
+```
+
+## 4. Communication Between Fragment and Activity
+  Sending Data from Activity to Fragment
+  ```
+Bundle bundle = new Bundle();
+bundle.putString("key", "Hello from Activity!");
+ExampleFragment fragment = new ExampleFragment();
+fragment.setArguments(bundle);
+
+getSupportFragmentManager()
+    .beginTransaction()
+    .add(R.id.fragmentContainer, fragment)
+    .commit();
+```
+
+In the fragment:
+```
+@Override
+public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+    super.onViewCreated(view, savedInstanceState);
+
+    if (getArguments() != null) {
+        String data = getArguments().getString("key");
+        TextView textView = view.findViewById(R.id.textView);
+        textView.setText(data);
+    }
+}
+```
+
+## 5. Replacing Fragments
+Replace an existing fragment with another:
+
+```
+AnotherFragment newFragment = new AnotherFragment();
+getSupportFragmentManager()
+    .beginTransaction()
+    .replace(R.id.fragmentContainer, newFragment)
+    .addToBackStack(null) // Optional: Add to back stack
+    .commit();
+```
+
