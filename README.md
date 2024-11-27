@@ -4,7 +4,10 @@ This README file covers essential concepts and tools used in Android development
 
 ---
 
-## 1. What is Android?
+# FRONTEND 
+--- 
+
+# 1. What is Android?
 **Android** is an open-source mobile operating system developed by Google, designed primarily for touchscreen devices such as smartphones and tablets. It is built on a modified version of the Linux kernel, making it highly customizable and flexible for developers.
 
 ### Example
@@ -12,7 +15,7 @@ This README file covers essential concepts and tools used in Android development
 
 ---
 
-## 2. What is an IDE?
+# 2. What is an IDE?
 **IDE** stands for **Integrated Development Environment**, a software application that provides comprehensive tools for software development, including code editors, debuggers, and build automation tools. 
 
 ### Example
@@ -20,7 +23,7 @@ This README file covers essential concepts and tools used in Android development
 
 ---
 
-## 3. What are Frontend and Backend in Android?
+# 3. What are Frontend and Backend in Android?
 - **Frontend** in Android refers to the **UI/UX** of the app that users interact with, such as layouts, buttons, and navigation. It is typically built using XML and Java/Kotlin.
 - **Backend** in Android involves the logic and data handling, such as managing databases, APIs, and background processes. This is usually implemented using Java/Kotlin.
 
@@ -30,7 +33,7 @@ This README file covers essential concepts and tools used in Android development
 
 ---
 
-## 4. What are ADB and AVD?
+# 4. What are ADB and AVD?
 - **ADB (Android Debug Bridge)** is a versatile command-line tool that allows developers to communicate with an emulator instance or connected Android devices. It is used for debugging, installing apps, and accessing device logs.
 - **AVD (Android Virtual Device)** is an emulator configuration that lets you simulate an Android device on your computer, allowing you to test applications without a physical device.
 
@@ -40,7 +43,7 @@ This README file covers essential concepts and tools used in Android development
 
 ---
 
-## 5. What is an APK?
+# 5. What is an APK?
 **APK (Android Package Kit)** is the file format used to distribute and install applications on Android devices. It contains all the components of an app, including the code, resources, assets, and manifest file.
 
 ### Example
@@ -50,7 +53,7 @@ This README file covers essential concepts and tools used in Android development
 
 ---
 
-## 6. What is Debugging?
+# 6. What is Debugging?
 Debugging is the process of identifying, analyzing, and removing bugs or errors from the code to ensure the application runs smoothly. Android Studio provides various tools such as the Logcat, breakpoints, and the debugger tool to assist in this process.
 
 ##  Example
@@ -61,7 +64,7 @@ Using Logcat to track down errors:
 
 ---
 
-## 7. What is XML?
+# 7. What is XML?
 XML (Extensible Markup Language) is a markup language used in Android for defining the structure and layout of the UI components. It is used to describe the layout of elements like buttons, text views, and images in the app.
 
 ## Example
@@ -77,7 +80,7 @@ Sample XML for a Button in Android:
 
 ---
 
-## 8. Layouts in Android Studio (XML)
+# 8. Layouts in Android Studio (XML)
 
 In Android, **layouts** are the structure that defines the user interface (UI) for an app. These layouts are written in XML and determine the positioning and appearance of UI components.
 
@@ -273,7 +276,7 @@ Cells in a row are arranged horizontally
 
 ---
 
-## 9. Views in Android: Text, Button, Image & EditText Views
+# 9. Views in Android: Text, Button, Image & EditText Views
 
 Views are the basic building blocks of an Android app's UI. They represent components like text, buttons, images, and input fields.
 
@@ -391,13 +394,13 @@ String userInput = editText.getText().toString();
 
 ---
 
-## 10. Drag and Drop in Android
+# 10. Drag and Drop in Android
 
 The Drag and Drop feature allows users to move data or view elements within the app. This functionality is useful in apps where users need to rearrange items, such as in a photo gallery or list.
 
 ---
 
-## 11. Android Intent Passing
+# 11. Android Intent Passing
 
 Intents are used to start activities, services, or deliver broadcasts. They can also be used to pass data between activities.
 
@@ -443,7 +446,7 @@ startActivity(intent);
 ```
 ---
 
-## 12. Android Bundle Passing
+# 12. Android Bundle Passing
 
 In Android, **Bundle Passing** is used to send multiple key-value pairs between activities or fragments. Bundles are often used with `Intent` to transfer data.
 
@@ -480,7 +483,7 @@ if (bundle != null) {
 
 ---
 
-## 13. Splash Screen
+# 13. Splash Screen
 A Splash Screen is the first screen that appears when an app is launched. It is often used for branding, initializing resources, or giving a professional look to the app.
 
 ### Steps to Create a Splash Screen:
@@ -546,13 +549,13 @@ Ensure to define the SplashScreenActivity in the AndroidManifest.xml file and se
 </activity>
 ```
 
-## 14. What is ListView?
+# 14. What is ListView?
 
 A **ListView** in Android is a view group that displays a list of items in a vertically scrolling list. It is a common way to display long lists of data in an app.
 
 ---
 
-## 15. Types of ListView
+# 15. Types of ListView
 
 ### 15.1. Simple ListView
 A **Simple ListView** displays a list of plain text items.
@@ -704,7 +707,7 @@ public class MainActivity extends AppCompatActivity {
 ```
 
 --- 
-## 16. Custom CardView  
+# 16. Custom CardView  
 
 CardView is a UI component used to display information in a card format with elevation, rounded corners, and shadows.  
 
@@ -744,7 +747,7 @@ CardView is a UI component used to display information in a card format with ele
 
 ---
 
-## 17. RecyclerView
+# 17. RecyclerView
 RecyclerView is a flexible and efficient UI component for displaying large sets of data.
 
 ### Steps to Implement RecyclerView
@@ -984,7 +987,7 @@ getSupportFragmentManager()
 ```
 ---
 
-## 19. Tab Layout  
+# 19. Tab Layout  
 
 **Tab Layout** is used to display horizontal tabs that can switch between different fragments or activities.  
 
@@ -1127,10 +1130,10 @@ public class MainActivity extends AppCompatActivity {
 
 ---
 
-21. Navigation Drawer
+# 21. Navigation Drawer
 Navigation Drawer is a UI panel that displays app’s navigation menu.
 
-XML Layout for Navigation Drawer
+### XML Layout for Navigation Drawer
 
 ```
 <androidx.drawerlayout.widget.DrawerLayout
@@ -1316,5 +1319,598 @@ If your WebView needs to load external URLs or resources, add these permissions 
 <uses-permission android:name="android.permission.INTERNET" />
 ```
 
+---
+# SQLite DATABASE
+---
 
 
+
+# 📊 Database in Android  
+
+---
+
+## What is a Database?  
+A **database** is an organized collection of data that can be easily accessed, managed, and updated. Databases are essential for storing and retrieving data in applications.  
+
+### Types of Databases  
+1. **Relational Databases**: Data is stored in tables with rows and columns. Examples: MySQL, PostgreSQL, SQLite.  
+2. **NoSQL Databases**: Data is stored in a non-tabular format (e.g., JSON). Examples: MongoDB, Firebase Realtime Database.  
+3. **In-Memory Databases**: Data is stored in memory for faster access. Examples: Redis, Memcached.  
+
+---
+
+## What is SQLite?  
+**SQLite** is a lightweight, open-source relational database used in Android applications. It stores data locally on the device and does not require a server.  
+
+### Key Features of SQLite  
+- Small and efficient.  
+- No need for a separate server.  
+- Data is stored in `.db` files.  
+
+---
+
+## What is SQLiteOpenHelper?  
+**SQLiteOpenHelper** is a helper class in Android used to manage database creation and version management.  
+
+### Key Methods in SQLiteOpenHelper  
+1. **onCreate()**: Called when the database is created for the first time.  
+2. **onUpgrade()**: Called when the database version is updated.  
+
+### Example Code for SQLiteOpenHelper  
+```java
+public class DatabaseHelper extends SQLiteOpenHelper {
+
+    private static final String DATABASE_NAME = "example.db";
+    private static final int DATABASE_VERSION = 1;
+
+    // Table and Column Names
+    private static final String TABLE_NAME = "users";
+    private static final String COLUMN_ID = "id";
+    private static final String COLUMN_NAME = "name";
+    private static final String COLUMN_AGE = "age";
+
+    public DatabaseHelper(Context context) {
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
+    }
+
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+        String createTable = "CREATE TABLE " + TABLE_NAME + " (" +
+                COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                COLUMN_NAME + " TEXT, " +
+                COLUMN_AGE + " INTEGER)";
+        db.execSQL(createTable);
+    }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
+        onCreate(db);
+    }
+}
+```
+
+---
+# CRUD Operations in SQLite
+CRUD stands for Create, Read, Update, and Delete. These are the basic operations performed on a database.
+
+
+## 1. Create (Insert Data)
+```
+public void insertUser(String name, int age) {
+    SQLiteDatabase db = this.getWritableDatabase();
+    ContentValues values = new ContentValues();
+    values.put(COLUMN_NAME, name);
+    values.put(COLUMN_AGE, age);
+    db.insert(TABLE_NAME, null, values);
+    db.close();
+}
+
+```
+
+## 2. Read (Retrieve Data)
+```
+public Cursor getAllUsers() {
+    SQLiteDatabase db = this.getReadableDatabase();
+    return db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
+}
+
+```
+
+## 3. Update
+```
+public void updateUser(int id, String name, int age) {
+    SQLiteDatabase db = this.getWritableDatabase();
+    ContentValues values = new ContentValues();
+    values.put(COLUMN_NAME, name);
+    values.put(COLUMN_AGE, age);
+    db.update(TABLE_NAME, values, COLUMN_ID + " = ?", new String[]{String.valueOf(id)});
+    db.close();
+}
+
+```
+
+## 4. Delete
+```
+public void deleteUser(int id) {
+    SQLiteDatabase db = this.getWritableDatabase();
+    db.delete(TABLE_NAME, COLUMN_ID + " = ?", new String[]{String.valueOf(id)});
+    db.close();
+}
+
+```
+
+---
+# 🔥FIREBASE BACKEND
+---
+
+##   What is Firebase Backend?
+Firebase is a Backend-as-a-Service (BaaS) platform provided by Google. It simplifies backend development by offering various ready-made services for app developers, allowing them to focus on building features rather than managing servers.
+
+## Firebase Services
+ Here are some key services offered by Firebase:
+
+- Authentication
+
+* Supports user authentication via email/password, phone numbers, and third-party providers (Google, Facebook, Twitter).
+* Used to manage users securely.
+
+- Realtime Database
+
+* A cloud-hosted NoSQL database.
+* Provides real-time data synchronization to all connected clients.
+* Firebase Realtime Database is a NoSQL cloud database that is used to store and sync the data. The data from the database can be synced at a time across all the clients such as android, web as well as IOS. The
+data in the database is stored in the JSON format and it updates in real time with every connected client.
+
+- Cloud Firestore
+
+* A scalable and flexible NoSQL database for storing and syncing data.
+* Ideal for more complex querying than the Realtime Database.
+
+Cloud Storage
+
+* Handles file uploads and stores large files like images, videos, and audio.
+
+- Cloud Messaging
+* Used for sending push notifications to your app users.
+
+- Hosting
+* Serves static files like HTML, CSS, and JavaScript for web applications.
+
+- Crashlytics
+* Tracks and reports app crashes in real time, helping you debug issues.
+
+- Analytics
+* Offers insights into user behavior, such as screen views, active users, and events.
+  
+- Functions
+* Allows you to run server-side code (functions) in response to events.
+Remote Config
+* Enables app customization without requiring a new release.
+
+# 🔥 Firebase Backend Configuration in Android Studio  
+
+---
+
+## 🚀 Steps to Configure Firebase Backend in Android Studio  
+
+1. **Create a Firebase Project**:  
+   - Go to the [Firebase Console](https://console.firebase.google.com/).  
+   - Click **Add Project** and follow the setup wizard.  
+
+2. **Add Android App to Firebase**:  
+   - Inside the Firebase project, click **Add App** and choose Android.  
+   - Enter your app’s package name (found in your `AndroidManifest.xml` file).  
+   - Download the `google-services.json` file and place it in the `app/` directory of your project.  
+
+3. **Add Firebase SDK to Android Project**:  
+   - Open the `build.gradle` (Project Level) and add:  
+     ```gradle
+     dependencies {
+         classpath 'com.google.gms:google-services:4.3.15'
+     }
+     ```  
+   - Open the `build.gradle` (App Level) and add:  
+     ```gradle
+     implementation 'com.google.firebase:firebase-auth:22.1.0'
+     implementation 'com.google.firebase:firebase-database:20.3.3'
+     ```  
+   - At the end of the `build.gradle` (App Level), add:  
+     ```gradle
+     apply plugin: 'com.google.gms.google-services'
+     ```  
+
+4. **Sync the Project**:  
+   - Click on **Sync Now** in Android Studio to download the Firebase dependencies.
+
+5. **Initialize Firebase**:  
+   - Open your `MainActivity.java` or `Application` class and add:  
+     ```java
+     FirebaseApp.initializeApp(this);
+     ```
+
+---
+
+## 🔑 Steps to Use Firebase Authentication in Android  
+
+### 1. Enable Authentication in Firebase Console:  
+   - Go to **Firebase Console > Authentication > Sign-in Method**.  
+   - Enable providers like **Email/Password**, **Google**, or **Phone**.
+
+### 2. Code for Email/Password Authentication:  
+
+#### Sign-Up:  
+```java
+FirebaseAuth auth = FirebaseAuth.getInstance();
+
+public void signUp(String email, String password) {
+    auth.createUserWithEmailAndPassword(email, password)
+        .addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                FirebaseUser user = auth.getCurrentUser();
+                Log.d("Signup", "User created: " + user.getEmail());
+            } else {
+                Log.e("Signup Error", task.getException().getMessage());
+            }
+        });
+}
+```
+
+### Login:
+
+```
+public void login(String email, String password) {
+    auth.signInWithEmailAndPassword(email, password)
+        .addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                FirebaseUser user = auth.getCurrentUser();
+                Log.d("Login", "User logged in: " + user.getEmail());
+            } else {
+                Log.e("Login Error", task.getException().getMessage());
+            }
+        });
+}
+
+```
+
+---
+
+## 📚 Steps to Use Firebase Realtime Database in Android
+### 1. Enable Realtime Database in Firebase Console:
+- Go to Firebase Console > Realtime Database > Create Database.
+- Set security rules for testing:
+
+```
+{
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null"
+  }
+}
+
+```
+### 2. Writing Data to Realtime Database:
+
+```
+FirebaseDatabase database = FirebaseDatabase.getInstance();
+DatabaseReference ref = database.getReference("users");
+
+public void writeData(String userId, String name, String email) {
+    Map<String, String> user = new HashMap<>();
+    user.put("name", name);
+    user.put("email", email);
+
+    ref.child(userId).setValue(user)
+        .addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                Log.d("Database", "Data written successfully");
+            } else {
+                Log.e("Database Error", task.getException().getMessage());
+            }
+        });
+}
+```
+
+### 3. Reading Data from Realtime Database:
+
+```
+public void readData(String userId) {
+    ref.child(userId).addListenerForSingleValueEvent(new ValueEventListener() {
+        @Override
+        public void onDataChange(DataSnapshot snapshot) {
+            if (snapshot.exists()) {
+                String name = snapshot.child("name").getValue(String.class);
+                String email = snapshot.child("email").getValue(String.class);
+                Log.d("Database", "Name: " + name + ", Email: " + email);
+            } else {
+                Log.e("Database", "Data does not exist");
+            }
+        }
+
+        @Override
+        public void onCancelled(DatabaseError error) {
+            Log.e("Database Error", error.getMessage());
+        }
+    });
+}
+
+```
+
+### 4. Updating Data:
+
+```
+public void updateData(String userId, String newEmail) {
+    ref.child(userId).child("email").setValue(newEmail)
+        .addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                Log.d("Database", "Email updated successfully");
+            } else {
+                Log.e("Database Error", task.getException().getMessage());
+            }
+        });
+}
+
+```
+
+### 5. Deleting Data:
+
+```
+public void deleteData(String userId) {
+    ref.child(userId).removeValue()
+        .addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                Log.d("Database", "Data deleted successfully");
+            } else {
+                Log.e("Database Error", task.getException().getMessage());
+            }
+        });
+}
+
+```
+
+---
+# 📱 Developing Login, Sign-Up, and Dashboard Activities in Android
+---
+
+## 🔒 Login Activity
+### Purpose:
+Allows users to log into the app using their email and password.
+
+### Steps to Implement:
+1. Create LoginActivity.java:
+- Add input fields for email and password in the XML layout file.
+- Add a Login button.
+
+#### XML Layout:
+
+```
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/emailInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/passwordInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login" />
+</LinearLayout>
+
+```
+
+#### Java Code:
+
+```
+public class LoginActivity extends AppCompatActivity {
+    private FirebaseAuth auth;
+    private EditText emailInput, passwordInput;
+    private Button loginButton;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_login);
+
+        auth = FirebaseAuth.getInstance();
+        emailInput = findViewById(R.id.emailInput);
+        passwordInput = findViewById(R.id.passwordInput);
+        loginButton = findViewById(R.id.loginButton);
+
+        loginButton.setOnClickListener(v -> loginUser());
+    }
+
+    private void loginUser() {
+        String email = emailInput.getText().toString();
+        String password = passwordInput.getText().toString();
+
+        auth.signInWithEmailAndPassword(email, password)
+            .addOnCompleteListener(task -> {
+                if (task.isSuccessful()) {
+                    startActivity(new Intent(this, DashboardActivity.class));
+                    finish();
+                } else {
+                    Toast.makeText(this, "Login Failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
+    }
+}
+
+```
+
+---
+
+## 🆕 Sign-Up Activity
+### Purpose:
+Allows new users to register using their email and password.
+
+### Steps to Implement:
+1. Create SignUpActivity.java:
+- Add input fields for email, password, and confirm password.
+- Add a Sign-Up button.
+
+#### XML Layout:
+
+```
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/emailInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/passwordInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/confirmPasswordInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Confirm Password"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/signUpButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sign Up" />
+</LinearLayout>
+
+```
+
+#### Java Code:
+
+```
+public class SignUpActivity extends AppCompatActivity {
+    private FirebaseAuth auth;
+    private EditText emailInput, passwordInput, confirmPasswordInput;
+    private Button signUpButton;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_sign_up);
+
+        auth = FirebaseAuth.getInstance();
+        emailInput = findViewById(R.id.emailInput);
+        passwordInput = findViewById(R.id.passwordInput);
+        confirmPasswordInput = findViewById(R.id.confirmPasswordInput);
+        signUpButton = findViewById(R.id.signUpButton);
+
+        signUpButton.setOnClickListener(v -> signUpUser());
+    }
+
+    private void signUpUser() {
+        String email = emailInput.getText().toString();
+        String password = passwordInput.getText().toString();
+        String confirmPassword = confirmPasswordInput.getText().toString();
+
+        if (!password.equals(confirmPassword)) {
+            Toast.makeText(this, "Passwords do not match", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        auth.createUserWithEmailAndPassword(email, password)
+            .addOnCompleteListener(task -> {
+                if (task.isSuccessful()) {
+                    Toast.makeText(this, "Sign-Up Successful", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(this, LoginActivity.class));
+                    finish();
+                } else {
+                    Toast.makeText(this, "Sign-Up Failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            });
+    }
+}
+
+```
+---
+
+## 🏠 Dashboard Activity
+### Purpose:
+Provides a landing page for logged-in users with options like viewing a profile or logging out.
+
+### Steps to Implement:
+!. Create DashboardActivity.java:
+- Add options like a welcome message, buttons for navigation, and logout functionality.
+
+#### XML Layout:
+
+``` 
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/welcomeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome!"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/logoutButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Log Out" />
+</LinearLayout>
+
+```
+
+#### Java Code
+
+```
+public class DashboardActivity extends AppCompatActivity {
+    private FirebaseAuth auth;
+    private TextView welcomeText;
+    private Button logoutButton;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_dashboard);
+
+        auth = FirebaseAuth.getInstance();
+        welcomeText = findViewById(R.id.welcomeText);
+        logoutButton = findViewById(R.id.logoutButton);
+
+        FirebaseUser user = auth.getCurrentUser();
+        if (user != null) {
+            welcomeText.setText("Welcome, " + user.getEmail());
+        }
+
+        logoutButton.setOnClickListener(v -> {
+            auth.signOut();
+            startActivity(new Intent(this, LoginActivity.class));
+            finish();
+        });
+    }
+}
+
+```
