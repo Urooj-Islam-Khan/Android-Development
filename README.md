@@ -83,6 +83,7 @@ In Android, **layouts** are the structure that defines the user interface (UI) f
 - **RelativeLayout**: Positions elements relative to each other or to the parent container.
 - **ConstraintLayout**: A more flexible layout that allows complex designs.
 - **FrameLayout**: Designed to block out an area on the screen for a single item.
+- **TableLayout:** Perfect for creating tabular data displays.
 
 ### Example: LinearLayout
 ```xml
@@ -100,6 +101,172 @@ In Android, **layouts** are the structure that defines the user interface (UI) f
 </LinearLayout>
 
  ```
+---
+# 📐 Common Layout Types in Android  
+
+Android provides a variety of layout types for arranging UI components. Below are the most commonly used layout types, along with explanations and examples.
+
+
+
+## 1. LinearLayout  
+
+**LinearLayout** arranges its children in a single direction — either **horizontally** or **vertically**.  
+
+### Example XML for LinearLayout  
+```xml
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="First Item" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Second Item" />
+</LinearLayout>
+```
+
+### Output
+Items are arranged one below the other in vertical orientation.
+Changing android:orientation to "horizontal" will align items side by side.
+
+
+## 2. RelativeLayout
+RelativeLayout allows positioning elements relative to each other or the parent container.
+
+Example XML for RelativeLayout
+```
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Title"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Subtitle"
+        android:layout_below="@id/title"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>
+```
+
+### Key Features
+- layout_alignParentTop: Aligns the element to the top of the parent.
+- layout_below: Positions the element below another element.
+
+
+
+## 3. ConstraintLayout
+ConstraintLayout is a powerful and flexible layout that enables complex designs with flat hierarchies.
+
+Example XML for ConstraintLayout
+```
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Title"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Click Me"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+```
+
+### Key Features
+Constraints define relationships between elements or with the parent.
+Ideal for responsive designs.
+
+## 4. FrameLayout
+FrameLayout is designed to hold a single child view but can be used with overlapping views.
+
+### Example XML for FrameLayout
+
+```
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/background" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello, FrameLayout!"
+        android:layout_gravity="center" />
+</FrameLayout>
+
+```
+
+### Key Features
+Great for simple use cases like stacking views.
+layout_gravity specifies where the child view should appear.
+
+## 5. TableLayout
+TableLayout arranges its children into rows and columns, similar to an HTML table.
+
+### Example XML for TableLayout
+```
+<TableLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TableRow>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Row 1, Column 1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Row 1, Column 2" />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Row 2, Column 1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Row 2, Column 2" />
+    </TableRow>
+</TableLayout>
+```
+
+### Key Features
+TableRow defines a row in the table.
+Cells in a row are arranged horizontally
 ---
 
 ## 9. Views in Android: Text, Button, Image & EditText Views
@@ -958,3 +1125,101 @@ public class MainActivity extends AppCompatActivity {
 ```
 
 ---
+
+# 22. 🌐 WebView in Android  
+
+**WebView** is a component that displays web pages as part of your activity layout. It acts as a browser inside your app and is commonly used to show external web content.
+
+---
+
+## 1. Adding WebView to Your XML Layout  
+
+```xml
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>
+```
+
+## 2. Setting Up WebView in Your Activity
+Enable JavaScript and Load a URL
+
+```
+import android.os.Bundle;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        WebView webView = findViewById(R.id.webView);
+
+        // Enable JavaScript
+        WebSettings webSettings = webView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+
+        // Load a URL
+        webView.setWebViewClient(new WebViewClient());
+        webView.loadUrl("https://www.google.com");
+    }
+}
+
+```
+
+## 3. Loading Local HTML Files
+To load a local HTML file from the assets folder:
+
+### Step 1: Place the HTML File
+
+Add your file (e.g., index.html) to the assets folder:
+app/src/main/assets/index.html
+
+### Step 2: Load the Local File
+
+```
+webView.loadUrl("file:///android_asset/index.html");
+```
+
+## 4. Handling Navigation
+Prevent opening links in external browsers:
+
+```
+webView.setWebViewClient(new WebViewClient() {
+    @Override
+    public boolean shouldOverrideUrlLoading(WebView view, String url) {
+        view.loadUrl(url);
+        return true;
+    }
+});
+```
+
+## 5. Enabling Debugging (Optional)
+For debugging purposes, enable WebView debugging:
+
+if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+    WebView.setWebContentsDebuggingEnabled(true);
+}
+
+
+## 6. WebView Permissions
+If your WebView needs to load external URLs or resources, add these permissions to AndroidManifest.xml:
+
+```
+<uses-permission android:name="android.permission.INTERNET" />
+```
+
+
+
