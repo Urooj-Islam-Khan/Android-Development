@@ -49,6 +49,7 @@ This README file covers essential concepts and tools used in Android development
 
 
 ---
+
 ## 6. What is Debugging?
 Debugging is the process of identifying, analyzing, and removing bugs or errors from the code to ensure the application runs smoothly. Android Studio provides various tools such as the Logcat, breakpoints, and the debugger tool to assist in this process.
 
@@ -59,6 +60,7 @@ Using Logcat to track down errors:
 
 
 ---
+
 ## 7. What is XML?
 XML (Extensible Markup Language) is a markup language used in Android for defining the structure and layout of the UI components. It is used to describe the layout of elements like buttons, text views, and images in the app.
 
@@ -74,6 +76,7 @@ Sample XML for a Button in Android:
 ```
 
 ---
+
 ## 8. Layouts in Android Studio (XML)
 
 In Android, **layouts** are the structure that defines the user interface (UI) for an app. These layouts are written in XML and determine the positioning and appearance of UI components.
@@ -267,6 +270,7 @@ TableLayout arranges its children into rows and columns, similar to an HTML tabl
 ### Key Features
 TableRow defines a row in the table.
 Cells in a row are arranged horizontally
+
 ---
 
 ## 9. Views in Android: Text, Button, Image & EditText Views
@@ -292,6 +296,97 @@ Common Views:
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="Submit" /> 
+```
+# 📱 Views in Android  
+
+Android provides several types of views to build user interfaces. Below are some commonly used views:  
+
+---
+
+
+## 1. **TextView**  
+
+**TextView** is used to display text to the user. It supports customization, such as text size, color, and font.  
+
+### Example XML for TextView  
+```xml
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Hello, World!"
+    android:textSize="18sp"
+    android:textColor="#FF0000"
+    android:padding="8dp" />
+
+```
+
+## 2. **Button**  
+
+**Button** is a clickable component that performs an action when clicked. 
+
+### Example XML for Button  
+
+```xml
+<Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Click Me"
+    android:onClick="handleButtonClick"
+    android:background="#6200EE"
+    android:textColor="#FFFFFF" />
+
+```
+### Example Java Code for Handling Button Click
+
+```
+public void handleButtonClick(View view) {
+    Toast.makeText(this, "Button Clicked!", Toast.LENGTH_SHORT).show();
+}
+
+```
+
+
+## 3. **ImageView**  
+
+**ImageView** is used to display images in your app.
+
+### Example XML for ImageView
+```xml
+<ImageView
+    android:layout_width="100dp"
+    android:layout_height="100dp"
+    android:src="@drawable/sample_image"
+    android:contentDescription="Sample Image"
+    android:scaleType="centerCrop" />
+
+```
+### Features
+src: Specifies the image resource.
+scaleType: Defines how the image should fit into the view.
+
+
+
+## 4. **EditText**  
+
+**EditText** is an editable text field that allows the user to input data.
+
+### Example XML for EditText 
+```xml
+<EditText
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="Enter your name"
+    android:inputType="text"
+    android:padding="8dp" />
+
+```
+
+### Example Java Code to Retrieve Input
+
+```
+EditText editText = findViewById(R.id.editText);
+String userInput = editText.getText().toString();
+
 ```
 
 ---
