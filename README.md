@@ -4,7 +4,7 @@ This README file covers essential concepts and tools used in Android development
 
 ---
 
-# FRONTEND 
+# 🎨FRONTEND 
 --- 
 
 # 1. What is Android?
